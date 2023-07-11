@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  app:
+    build: frontend/.
+    depends_on:
+      - backend-service
+    ports:
+      - "8080:3000"
+    env_file:
+      - frontend/.env
+    restart: always
+
+  backend-service:
+    build: backend/.
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    env_file:
+      - backend/.env
+    restart: always
+
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgresql
+      - POSTGRES_DB=skilllane
+    ports:
+      # Standard port for PostgreSQL databases
+      - "5431:5432"
+    volumes:
+      # - ./database-seed.sql:/docker-entrypoint-initdb.d/database-seed.sql
+      - ./postgres-data:/var/lib/postgresql/data

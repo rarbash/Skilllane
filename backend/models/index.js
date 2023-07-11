@@ -20,6 +20,7 @@ sequelize = new Sequelize(
   process.env.DB_PASSWORD,
   {
     host: process.env.DB_URL,
+    port: process.env.DB_PORT,
     dialect: "postgres",
   }
 );

@@ -1,8 +1,5 @@
 const db = require("../models");
 const { fn, where, col, Op } = require("sequelize");
-// const { Op, Sequelize } = require("sequelize");
-// import { Sequelize } from "../models";
-// const { course } = require("../models");
 const Course = db.course;
 
 module.exports = {

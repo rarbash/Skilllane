@@ -3,8 +3,6 @@ const router = Router();
 const courseController = require("../controllers/Course.controller");
 const auth = require("../middleware/auth");
 
-const dataImagePrefix = `data:image/png;base64,`;
-
 router.get("/", async (req, res) => {
   try {
     let courses = [];

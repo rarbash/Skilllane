@@ -6,18 +6,21 @@ import { AxiosResponse } from "axios";
 
 // const dispatch = useDispatch();
 
-
-export const signIn = async(data: LoginI) => {
+export const signIn = async (data: LoginI) => {
   try {
-    return await instance.post("/users/login",{
+    return await instance.post("/users/login", {
       username: data.username,
-      password: data.password
-    })
+      password: data.password,
+    });
   } catch (error) {
     throw error;
   }
-}
+};
 
-export const getOneUser = async() => {
-  return await instance.get("/users/my-profile/");
-}
+export const getOneUser = async () => {
+  try {
+    return await instance.get("/users/my-profile/");
+  } catch (error) {
+    throw error;
+  }
+};

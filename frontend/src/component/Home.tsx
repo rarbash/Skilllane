@@ -2,15 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { checkAuth, GetCourse, getOneUserAction } from "../state/actions";
-import { courseReducer } from "../state/reducers";
-// import { store } from "../state/store";
-import {
-  CourseI,
-  CourseSate,
-  CourseActionI,
-  CourseActionType,
-} from "../state/types";
+import { GetCourse, getOneUserAction } from "../state/actions";
+import { CourseI } from "../state/types";
 import CourseCard from "./CourseCard";
 import Nav from "./Nav";
 import { RootState } from "../state/index";

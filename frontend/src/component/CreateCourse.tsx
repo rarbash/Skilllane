@@ -37,7 +37,6 @@ export default function CreateCourse() {
       const files = (event.target as HTMLInputElement).files;
       files
         ? await imageUploaded(files[0], (data: String) => {
-            console.log(data, "base64");
             setCourseForm({
               ...courseForm,
               image: data,

@@ -39,7 +39,7 @@ This web application was developed as a part of application process into a job p
 
 ## Access Information
 
-- URL: [test]()
+- URL:
   - Frontend: https://skilllane.rabash.dev/
   - Backend: https://skilllane-backend.rabash.dev/
 - Authentication for Database:

@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     image: {
-      type: DataTypes.BLOB("long"),
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     category: {

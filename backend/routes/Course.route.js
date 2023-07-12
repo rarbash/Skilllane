@@ -3,28 +3,25 @@ const router = Router();
 const courseController = require("../controllers/Course.controller");
 const auth = require("../middleware/auth");
 
+const dataImagePrefix = `data:image/png;base64,`;
+
 router.get("/", async (req, res) => {
   try {
+    let courses = [];
     const queryName = req.query.name;
     const queryStartDate = req.query.start;
     const queryEndDate = req.query.end;
     if (queryName) {
-      const courses = await courseController.findByName(queryName);
-      res.status(200).json({ courses: courses });
+      courses = await courseController.findByName(queryName);
     } else if (queryStartDate && queryEndDate) {
-      const courses = await courseController.findByStartEndDate(
+      courses = await courseController.findByStartEndDate(
         queryStartDate,
         queryEndDate
       );
-      res.status(200).json({
-        courses,
-      });
     } else {
-      const courses = await courseController.findAll();
-      res.status(200).json({
-        courses,
-      });
+      courses = await courseController.findAll();
     }
+    res.status(200).json({ courses });
   } catch (err) {
     console.log(err);
     res.status(404).send({ errorMessage: "Not Found" });

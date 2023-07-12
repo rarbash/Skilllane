@@ -8,8 +8,9 @@ const usersRouter = require("./routes/Users.route");
 const profileRouter = require("./routes/Profile.route");
 const courseRouter = require("./routes/Course.route");
 
-app.use(express.json());
+app.use(express.json({ limit: "50mb" }));
 app.use(cors());
+app.use(express.urlencoded({ limit: "50mb" }));
 
 app.get("/", (req, res) => {
   res.send("Hello World");

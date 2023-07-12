@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const usersController = require("../controllers/Users.controller");
+const auth = require("../middleware/auth");
 
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
@@ -16,9 +17,9 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:username", async (req, res) => {
+router.get("/my-profile", auth, async (req, res) => {
   try {
-    const username = req.params.username;
+    const username = req.user.username;
     if (username) {
       const user = await usersController.findOneUserProfile(username);
       res.status(200).json({ user: user });

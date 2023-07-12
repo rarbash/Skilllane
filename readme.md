@@ -43,7 +43,7 @@ This web application was developed as a part of application process into a job p
   - Frontend: https://skilllane.rabash.dev/
   - Backend: https://skilllane-backend.rabash.dev/
 - Authentication for Database:
-  - IP:
+  - IP: 34.143.252.191
   - Username: postgres
   - Password: postgresql
 - Authentication for the website

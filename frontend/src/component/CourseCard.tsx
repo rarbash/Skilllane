@@ -1,5 +1,3 @@
-import React from "react";
-
 interface courseInfo {
   name: String;
   description: String;

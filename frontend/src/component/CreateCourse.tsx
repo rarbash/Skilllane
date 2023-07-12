@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { createCourseAtion } from "../state/actions";
 import { CourseI } from "../state/types";
@@ -22,7 +22,6 @@ export default function CreateCourse() {
     let reader = new FileReader();
     let base64 = "";
     reader.onload = () => {
-      // .replace("data:", "").replace(/^.+,/, "")
       const base64String = reader.result ? reader.result.toString() : "";
       base64 = base64String;
       callback(base64);
@@ -49,10 +48,8 @@ export default function CreateCourse() {
             image: "",
           });
     } else {
-      console.log("other change");
       setCourseForm({ ...courseForm, [name]: value });
     }
-    console.log(courseForm, "courseForm");
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {

@@ -1,4 +1,3 @@
-import { userInfo } from "os";
 import {
   LoginState,
   LoginActionType,
@@ -51,7 +50,6 @@ export const courseReducer = (
 export const userReducer = (state = initialUserState, action: UserActionI) => {
   switch (action.type) {
     case UserActionType.GET_ONE_USER:
-      // console.log(action.payload);
       return action.payload;
     case UserActionType.UPDATE_PROFILE:
       return action.payload;
